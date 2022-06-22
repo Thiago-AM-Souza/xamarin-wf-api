@@ -20,7 +20,6 @@ namespace AppCadastro.View
         {
             InitializeComponent();
             ListCliente = new List<Cliente>();
-
         }
 
         public async void Logar()

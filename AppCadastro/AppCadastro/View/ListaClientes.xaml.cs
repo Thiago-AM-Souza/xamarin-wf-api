@@ -37,9 +37,10 @@ namespace AppCadastro.View
             CarregarClientes();
         }
 
-        private void ListViewCliente_ItemSelect(object sender, SelectedItemChangedEventArgs e)
+        private async void ListViewCliente_ItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-            //throw new NotImplementedException();
+            await Navigation.PushAsync(new ClienteSelected());
+
         }
 
         private void PesquisaCliente_TextChanged(object sender, TextChangedEventArgs e)

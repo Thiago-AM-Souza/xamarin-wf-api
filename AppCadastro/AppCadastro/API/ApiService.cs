@@ -29,5 +29,21 @@ namespace AppCadastro.API
                 throw;
             }
         }
+
+        public static async Task<Cliente> ObterClienteById(int id)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                string url = Url + $"/api/clientes/{id}";
+                string response = await client.GetStringAsync(url);
+                Cliente cliente = JsonConvert.DeserializeObject<Cliente>(response);
+                return cliente;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
