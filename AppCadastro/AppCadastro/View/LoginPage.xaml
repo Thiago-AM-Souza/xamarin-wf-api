@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCadastro.View.LoginPage">
+    <ScrollView>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+            <Image Source="login"></Image>
+            <Label Text="Login" HorizontalOptions="Center" FontSize="Large"></Label>
+            <Entry x:Name="txtEmail" Placeholder="Informe o email" TextColor="Black"></Entry>
+            <Entry x:Name="txtSenha" Placeholder="Informe sua senha" TextColor="Black" IsPassword="True" Keyboard="Numeric"></Entry>
+            <Button x:Name="btnLogin" Text="Login" Clicked="btnLogin_Clicked"></Button>
+            
+        </StackLayout>
+        
+    </ScrollView>
+</ContentPage>
