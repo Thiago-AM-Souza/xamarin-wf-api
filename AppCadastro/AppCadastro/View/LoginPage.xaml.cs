@@ -1,6 +1,6 @@
 ﻿using AppCadastro.API;
+using Informacoes;
 using Plugin.Connectivity;
-using Servico;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,17 +27,21 @@ namespace AppCadastro.View
         {
             if (CrossConnectivity.Current.IsConnected)
             {
+                if(string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSenha.Text))
+                {
+                    await DisplayAlert("Erro", "Informe o email e a senha.", "Ok");
+                }
                 ListCliente = await ApiService.ObterCliente();
 
-                var cliente = ListCliente.Where(x => x.email == txtEmail.Text && x.senha == txtSenha.Text).ToList();
+                var cliente = ListCliente.Where(x => x.Email.ToLower() == txtEmail.Text.ToLower() && x.Senha == txtSenha.Text).ToList();
 
-                if (cliente.Count > 0)
+                if (cliente.Count == 1)
                 {
                     await Navigation.PushAsync(new ListaClientes());
                 }
                 else
                 {
-                    await DisplayAlert("Erro", "Login ou senha errado", "Ok");
+                    await DisplayAlert("Erro", "Login ou senha incorreta.", "Ok");
                 }
             }
             else

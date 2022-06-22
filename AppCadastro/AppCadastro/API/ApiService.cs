@@ -1,11 +1,12 @@
 ﻿
+using Informacoes;
 using Newtonsoft.Json;
-using Servico;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace AppCadastro.API
 {
@@ -18,7 +19,7 @@ namespace AppCadastro.API
             try
             {
                 HttpClient client = new HttpClient();
-                string url = Url + "/API/clientes";
+                string url = Url + "/api/clientes";
                 string response = await client.GetStringAsync(url);
                 List<Cliente> cliente = JsonConvert.DeserializeObject<List<Cliente>>(response);
                 return cliente;

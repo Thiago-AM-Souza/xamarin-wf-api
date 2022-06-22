@@ -1,19 +1,25 @@
-namespace Servico
-{
-    using System;
+using System;
+
+namespace Informacoes{
 
     public partial class Cliente
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string cpf_cnpj { get; set; }
-        public string cep { get; set; }
-        public decimal? limite { get; set; }
-        public string email { get; set; }
-        public string senha { get; set; }
-        public DateTime? data_cadastro { get; set; }
-        public bool? ativo { get; set; }
-        public bool? importado { get; set; }
-        public string telefone { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Cpf_cnpj { get; set; }
+        public string Cep { get; set; }
+        public decimal? Limite { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
+        public DateTime? Data_cadastro { get; set; }
+        public bool? Ativo { get; set; }
+        public bool? Importado { get; set; }
+        public string Telefone { get; set; }
+
+        public Cliente()
+        {
+
+        }
     }
 }
+
