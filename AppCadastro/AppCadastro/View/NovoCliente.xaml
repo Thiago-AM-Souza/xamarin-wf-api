@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCadastro.View.NovoCliente">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblTitulo" Text="NOVO CLIENTE" FontSize="Title" BackgroundColor="WhiteSmoke"></Label>
+            <Label x:Name="lblNome" Text="Nome: "></Label>
+            <Entry x:Name="txtNome" BackgroundColor="Azure"></Entry>
+            <Label x:Name="lblEmail" Text="Email: "></Label>
+            <Entry x:Name="txtEmail" BackgroundColor="Azure"></Entry>
+            <Label x:Name="lblTelefone" Text="Telefone: "></Label>
+            <Entry x:Name="txtTelefone" BackgroundColor="Azure"></Entry>
+            <Label x:Name="lblSenha" Text="Senha: "></Label>
+            <Entry x:Name="txtSenha" BackgroundColor="Azure" Keyboard="Numeric" IsPassword="True"></Entry>
+            <Button x:Name="btnSalvar" Text="Salvar" Clicked="btnSalvar_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

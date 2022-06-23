@@ -7,7 +7,7 @@
             <Label Text="Listagem de Clientes" FontSize="Medium" HorizontalOptions="Center" FontAttributes="Bold"></Label>
             <SearchBar x:Name="pesquisaCliente" Placeholder="Informe a pesquisa" TextChanged="PesquisaCliente_TextChanged"></SearchBar>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnAddCliente" Text="Adicionar Novo"></Button>
+                <Button x:Name="btnAddCliente" Text="Adicionar Novo" Clicked="btnAddCliente_Clicked"></Button>
                 <Button x:Name="btnAtualizar" Text="Atualizar" Clicked="btnAtualizar_Clicked"></Button>
             </StackLayout>
             <ListView x:Name="ListViewCliente" VerticalOptions="FillAndExpand"></ListView>

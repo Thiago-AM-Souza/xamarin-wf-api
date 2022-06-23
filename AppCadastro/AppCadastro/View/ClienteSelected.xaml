@@ -11,6 +11,7 @@
             <Label x:Name="txtEmail" Text="" FontSize="Body"></Label>
             <Label x:Name="txtTelefone" Text="" FontSize="Body"></Label>
             <Button x:Name="btnAtualizarCadastro" Text="Atualizar" Clicked="btnAtualizarCadastro_Clicked" FontSize="Medium"></Button>
+            <Button x:Name="btnDelete" Text="Deletar" Clicked="btnDelete_Clicked" FontSize="Medium" TextColor="Red"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

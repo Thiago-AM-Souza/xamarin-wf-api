@@ -33,6 +33,17 @@ namespace AppCadastro.View
             await Navigation.PushAsync(new UpdateCliente(Cliente));
         }
 
+        private async void btnDelete_Clicked(object sender, EventArgs e)
+        {
+            var escolha = await DisplayActionSheet("EXCLUIR REGISTRO", "Não", "Sim", $"Tem certeza que deseja excluir o registro de {Cliente.Nome.ToUpper()}?");
+            if (escolha.ToUpper() == "SIM")
+            {
+                ApiService api = new ApiService();
+                await api.DeleteCliente(Cliente);
+                await Navigation.PushAsync(new ListaClientes());
+            }
+        }
+
         //private void 
     }
 }

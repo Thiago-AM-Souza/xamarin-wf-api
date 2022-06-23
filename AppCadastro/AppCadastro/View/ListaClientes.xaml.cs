@@ -54,5 +54,10 @@ namespace AppCadastro.View
         {
 
         }
+
+        private async void btnAddCliente_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NovoCliente());
+        }
     }
 }
