@@ -10,11 +10,12 @@ using System.Threading.Tasks;
 
 namespace AppCadastro.API
 {
-    public static class ApiService
+    public class ApiService
     {
         public const string Url = "https://servico-vi0.conveyor.cloud/";
 
-        public static async Task<List<Cliente>> ObterCliente()
+        //Get
+        public static async Task<List<Cliente>> GetClientes()
         {
             try
             {
@@ -30,7 +31,8 @@ namespace AppCadastro.API
             }
         }
 
-        public static async Task<Cliente> ObterClienteById(int id)
+        //GetById
+        public static async Task<Cliente> GetClienteById(int id)
         {
             try
             {
@@ -44,6 +46,60 @@ namespace AppCadastro.API
             {
                 throw;
             }
+        }
+
+        //Post
+        public async Task PostCliente(Cliente cliente)
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                string url = Url + "/api/clientes/{0}";
+                var uri = new Uri(string.Format(url, cliente.Id));
+                var data = JsonConvert.SerializeObject(cliente);
+                var content = new StringContent(data, Encoding.UTF8, "application/json");
+
+
+                HttpResponseMessage response = null;
+
+                response = await client.PostAsync(uri, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception("Erro ao adicionar cliente.");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        //Update
+        public async Task UpdateCliente(Cliente cliente)
+        {
+            HttpClient client = new HttpClient();
+            string url = Url + "/api/clientes/{0}";
+            var uri = new Uri(string.Format(url, cliente.Id));
+            var data = JsonConvert.SerializeObject(cliente);
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = null;
+            response = await client.PutAsync(uri, content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Erro ao atualizar cliente.");
+            }
+        }
+
+        //Delete
+        public async Task DeleteCliente(Cliente cliente)
+        {
+            HttpClient client = new HttpClient();
+            string url = Url + "/api/clientes/{0}";
+            var uri = new Uri(string.Format(url, cliente.Id));
+            await client.DeleteAsync(uri);
         }
     }
 }

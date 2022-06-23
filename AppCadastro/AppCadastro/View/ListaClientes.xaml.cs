@@ -16,6 +16,7 @@ namespace AppCadastro.View
     public partial class ListaClientes : ContentPage
     {
         public List<Cliente> ListaCliente;
+
         public ListaClientes()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace AppCadastro.View
 
         public async void CarregarClientes()
         {
-            ListaCliente = await ApiService.ObterCliente();
+            ListaCliente = await ApiService.GetClientes();
             ListViewCliente.ItemsSource = ListaCliente.OrderBy(x => x.Nome).ToList();
         }
 
@@ -39,8 +40,15 @@ namespace AppCadastro.View
 
         private async void ListViewCliente_ItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new ClienteSelected());
 
+
+            //var cliente = new ClienteSelected();
+            //cliente.ExibirInfo(e);
+            //await Navigation.PushAsync(cliente);
+            var cliente = e.SelectedItem as Cliente;
+            var page = new ClienteSelected();
+            page.ExibirInfo(cliente);
+            await Navigation.PushAsync(page);
         }
 
         private void PesquisaCliente_TextChanged(object sender, TextChangedEventArgs e)

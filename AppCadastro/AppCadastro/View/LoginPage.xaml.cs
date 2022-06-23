@@ -30,7 +30,7 @@ namespace AppCadastro.View
                 {
                     await DisplayAlert("Erro", "Informe o email e a senha.", "Ok");
                 }
-                ListCliente = await ApiService.ObterCliente();
+                ListCliente = await ApiService.GetClientes();
 
                 var cliente = ListCliente.Where(x => x.Email.ToLower() == txtEmail.Text.ToLower() && x.Senha == txtSenha.Text).ToList();
 

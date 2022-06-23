@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppCadastro.View.ClienteSelected">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Informacoes="clr-namespace:Informacoes"
+             x:Class="AppCadastro.View.ClienteSelected"
+             x:DataType="Informacoes:Cliente">
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="Teste" Text="Página para visualização do cliente selecionado"></Label>
-            
+            <Label x:Name="txtNome" Text=""></Label>
+            <Label x:Name="txtEmail" Text=""></Label>
+                   
+                    
             
         </StackLayout>
     </ContentPage.Content>

@@ -17,11 +17,12 @@ namespace AppCadastro.View
         public ClienteSelected()
         {
             InitializeComponent();
+            //ExibirInfo();
         }
-        public async void ExibirInfo()
+        public async void ExibirInfo(Cliente cliente)//SelectedItemChangedEventArgs e)
         {
-            Cliente cliente = await ApiService.ObterClienteById(1);
-            //OnPropertyChanged(nameof());
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
         }
     }
 }
