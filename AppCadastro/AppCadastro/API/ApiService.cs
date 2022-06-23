@@ -84,7 +84,7 @@ namespace AppCadastro.API
             var data = JsonConvert.SerializeObject(cliente);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = null;
+            HttpResponseMessage response;
             response = await client.PutAsync(uri, content);
 
             if (!response.IsSuccessStatusCode)

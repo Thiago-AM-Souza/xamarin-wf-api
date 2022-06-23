@@ -5,13 +5,12 @@
              x:Class="AppCadastro.View.ClienteSelected"
              x:DataType="Informacoes:Cliente">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="Teste" Text="Página para visualização do cliente selecionado"></Label>
-            <Label x:Name="txtNome" Text=""></Label>
-            <Label x:Name="txtEmail" Text=""></Label>
-                   
-                    
-            
+        <StackLayout Padding="10">
+            <Label x:Name="Teste" Text="CLIENTE" TextColor="WhiteSmoke" FontSize="Title" HorizontalTextAlignment="Center" Padding="4"></Label>
+            <Label x:Name="txtNome" Text="" FontSize="Body"></Label>
+            <Label x:Name="txtEmail" Text="" FontSize="Body"></Label>
+            <Label x:Name="txtTelefone" Text="" FontSize="Body"></Label>
+            <Button x:Name="btnAtualizarCadastro" Text="Atualizar" Clicked="btnAtualizarCadastro_Clicked" FontSize="Medium"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

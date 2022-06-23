@@ -14,15 +14,25 @@ namespace AppCadastro.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ClienteSelected : ContentPage
     {
-        public ClienteSelected()
+        Cliente Cliente;
+        public ClienteSelected(Cliente cliente)
         {
             InitializeComponent();
-            //ExibirInfo();
+            Cliente = cliente;
+            ExibirInfo();
         }
-        public async void ExibirInfo(Cliente cliente)//SelectedItemChangedEventArgs e)
+        public async void ExibirInfo()
         {
-            txtNome.Text = cliente.Nome;
-            txtEmail.Text = cliente.Email;
+            txtNome.Text = $"Nome: {Cliente.Nome}";
+            txtEmail.Text = $"Email: {Cliente.Email}";
+            txtTelefone.Text = $"Telefone: {Cliente.Telefone}";
         }
+
+        private async void btnAtualizarCadastro_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UpdateCliente(Cliente));
+        }
+
+        //private void 
     }
 }

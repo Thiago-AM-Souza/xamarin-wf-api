@@ -40,15 +40,8 @@ namespace AppCadastro.View
 
         private async void ListViewCliente_ItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-
-
-            //var cliente = new ClienteSelected();
-            //cliente.ExibirInfo(e);
-            //await Navigation.PushAsync(cliente);
-            var cliente = e.SelectedItem as Cliente;
-            var page = new ClienteSelected();
-            page.ExibirInfo(cliente);
-            await Navigation.PushAsync(page);
+            var cliente = e.SelectedItem as Cliente;       
+            await Navigation.PushAsync(new ClienteSelected(cliente));
         }
 
         private void PesquisaCliente_TextChanged(object sender, TextChangedEventArgs e)
